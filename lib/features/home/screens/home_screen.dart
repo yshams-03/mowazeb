@@ -69,12 +69,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
             ],
           ),
-          SliverPadding(
-            padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+          const SliverPadding(
+            padding: EdgeInsets.fromLTRB(16, 8, 16, 0),
             sliver: SliverToBoxAdapter(child: RamadanBanner()),
           ),
-          SliverPadding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+          const SliverPadding(
+            padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
             sliver: SliverToBoxAdapter(child: IftarCountdownCard()),
           ),
           const SliverPadding(

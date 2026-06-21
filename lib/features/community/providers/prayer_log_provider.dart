@@ -62,12 +62,31 @@ class PrayerLogNotifier extends StateNotifier<TodayPrayerLogs> {
     _ref.listen<AsyncValue<TodayPrayerLogs>>(todayPrayerLogsProvider, (_, next) {
       next.whenData((logs) {
         if (!_hasPendingOptimistic) {
+          if (_logsEqual(state, logs)) return;
           state = logs;
         } else {
-          state = _mergeWithOptimistic(logs);
+          final merged = _mergeWithOptimistic(logs);
+          if (_logsEqual(state, merged)) return;
+          state = merged;
         }
       });
     });
+  }
+
+  static bool _logsEqual(TodayPrayerLogs a, TodayPrayerLogs b) {
+    if (a.length != b.length) return false;
+    for (final prayer in PrayerName.values) {
+      final left = a[prayer];
+      final right = b[prayer];
+      if (left == null && right == null) continue;
+      if (left == null || right == null) return false;
+      if (left.checkedOff != right.checkedOff ||
+          left.status != right.status ||
+          left.checkedAt != right.checkedAt) {
+        return false;
+      }
+    }
+    return true;
   }
 
   final PrayerLogActions _actions;

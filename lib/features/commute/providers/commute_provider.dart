@@ -120,6 +120,7 @@ class CommuteNotifier extends StateNotifier<CommuteState> {
   }
 
   void reset() {
+    if (!state.isLoading && state.result == null && state.error == null) return;
     state = const CommuteState();
   }
 }

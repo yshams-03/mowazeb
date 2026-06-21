@@ -202,6 +202,7 @@ class PrayerNotifier extends StateNotifier<PrayerState> {
 
   Future<void> calculatePrayers(UserSettings settings) async {
     if (settings.latitude == null || settings.longitude == null) {
+      if (!state.isLoading && state.error == 'Location not configured.') return;
       state = state.copyWith(
         isLoading: false,
         error: 'Location not configured.',

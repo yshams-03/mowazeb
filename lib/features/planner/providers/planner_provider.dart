@@ -69,6 +69,17 @@ class PlannerNotifier extends StateNotifier<PlannerState> {
   StreamSubscription<QuerySnapshot<Map<String, dynamic>>>? _blocksSub;
 
   String? _lastPrayerScheduleKey;
+  String? _lastBlocksKey;
+  String? _lastContextsKey;
+
+  static String _blocksKey(List<RoutineBlock> blocks) => blocks
+      .map((b) => '${b.id}:${b.startMinutes}:${b.endMinutes}:${b.title}')
+      .join('|');
+
+  static String _contextsKey(List<PrayerContext> contexts) => contexts
+      .map((c) =>
+          '${c.prayerName}:${c.tag.name}:${c.prayerTime.toIso8601String()}:${c.blockTitle}')
+      .join('|');
 
   void _init() {
     _ref.listen<PrayerState>(prayerProvider, (previous, next) {
@@ -118,6 +129,14 @@ class PlannerNotifier extends StateNotifier<PlannerState> {
             .toList()
           ..sort((a, b) => a.startMinutes.compareTo(b.startMinutes));
 
+        final blocksKey = _blocksKey(blocks);
+        if (blocksKey == _lastBlocksKey &&
+            !state.isLoading &&
+            state.error == null) {
+          return;
+        }
+        _lastBlocksKey = blocksKey;
+
         state = state.copyWith(
           blocks: blocks,
           isLoading: false,
@@ -143,6 +162,10 @@ class PlannerNotifier extends StateNotifier<PlannerState> {
       blocks: state.blocks,
       date: DateTime.now(),
     );
+
+    final contextsKey = _contextsKey(contexts);
+    if (contextsKey == _lastContextsKey) return;
+    _lastContextsKey = contextsKey;
 
     state = state.copyWith(todayContexts: contexts);
     NotificationService.scheduleWuduNudges(contexts);

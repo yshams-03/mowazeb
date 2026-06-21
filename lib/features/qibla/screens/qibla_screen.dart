@@ -178,36 +178,38 @@ class _QiblaScreenState extends ConsumerState<QiblaScreen>
                             ),
                           ],
                           const Spacer(),
-                          AnimatedBuilder(
-                            animation: _pulseController,
-                            builder: (context, child) {
-                              final scale = 1 + (_pulseController.value * 0.04);
-                              return Transform.scale(
-                                scale: scale,
-                                child: child,
-                              );
-                            },
-                            child: SizedBox(
-                              height: 280,
-                              width: 280,
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Transform.rotate(
-                                    angle: (direction.direction * (math.pi / 180) * -1),
-                                    child: _CompassDial(
-                                      color: Theme.of(context).colorScheme.primary,
+                          RepaintBoundary(
+                            child: AnimatedBuilder(
+                              animation: _pulseController,
+                              builder: (context, child) {
+                                final scale = 1 + (_pulseController.value * 0.04);
+                                return Transform.scale(
+                                  scale: scale,
+                                  child: child,
+                                );
+                              },
+                              child: SizedBox(
+                                height: 280,
+                                width: 280,
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    Transform.rotate(
+                                      angle: (direction.direction * (math.pi / 180) * -1),
+                                      child: _CompassDial(
+                                        color: Theme.of(context).colorScheme.primary,
+                                      ),
                                     ),
-                                  ),
-                                  Transform.rotate(
-                                    angle: (direction.qiblah * (math.pi / 180) * -1),
-                                    child: const Icon(
-                                      Icons.navigation,
-                                      size: 120,
-                                      color: AppColors.accentGold,
+                                    Transform.rotate(
+                                      angle: (direction.qiblah * (math.pi / 180) * -1),
+                                      child: const Icon(
+                                        Icons.navigation,
+                                        size: 120,
+                                        color: AppColors.accentGold,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),

@@ -196,8 +196,14 @@ final routerProvider = Provider<GoRouter>((ref) {
 
 class _RouterRefresh extends ChangeNotifier {
   _RouterRefresh(this._ref) {
-    _ref.listen(authStateProvider, (_, __) => notifyListeners());
-    _ref.listen(userSettingsProvider, (_, __) => notifyListeners());
+    _ref.listen(authStateProvider, (previous, next) {
+      if (previous == next) return;
+      notifyListeners();
+    });
+    _ref.listen(userSettingsProvider, (previous, next) {
+      if (previous == next) return;
+      notifyListeners();
+    });
   }
 
   final Ref _ref;

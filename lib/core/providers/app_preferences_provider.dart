@@ -107,33 +107,47 @@ class AppPreferencesController extends StateNotifier<AppPreferences> {
   }
 
   void _mergeFromSettings(UserSettings settings) {
+    final theme = AppPreferences.themeFromString(settings.themeMode);
+    final localeCode = settings.locale ?? state.localeCode;
+    final arabicNumerals = settings.arabicNumerals ?? state.arabicNumerals;
+    final ramadan = AppPreferences.ramadanFromString(settings.ramadanModeOverride);
+    if (state.theme == theme &&
+        state.localeCode == localeCode &&
+        state.arabicNumerals == arabicNumerals &&
+        state.ramadan == ramadan) {
+      return;
+    }
     state = state.copyWith(
-      theme: AppPreferences.themeFromString(settings.themeMode),
-      localeCode: settings.locale ?? state.localeCode,
-      arabicNumerals: settings.arabicNumerals ?? state.arabicNumerals,
-      ramadan: AppPreferences.ramadanFromString(settings.ramadanModeOverride),
+      theme: theme,
+      localeCode: localeCode,
+      arabicNumerals: arabicNumerals,
+      ramadan: ramadan,
     );
   }
 
   Future<void> setTheme(AppThemePreference theme) async {
+    if (state.theme == theme) return;
     state = state.copyWith(theme: theme);
     await _store.setString(_themeKey, theme.name);
     await _syncToFirestore({'themeMode': theme.name});
   }
 
   Future<void> setLocale(String localeCode) async {
+    if (state.localeCode == localeCode) return;
     state = state.copyWith(localeCode: localeCode);
     await _store.setString(_localeKey, localeCode);
     await _syncToFirestore({'locale': localeCode});
   }
 
   Future<void> setArabicNumerals(bool enabled) async {
+    if (state.arabicNumerals == enabled) return;
     state = state.copyWith(arabicNumerals: enabled);
     await _store.setBool(_numeralsKey, enabled);
     await _syncToFirestore({'arabicNumerals': enabled});
   }
 
   Future<void> setRamadan(RamadanPreference ramadan) async {
+    if (state.ramadan == ramadan) return;
     state = state.copyWith(ramadan: ramadan);
     await _store.setString(_ramadanKey, ramadan.name);
     await _syncToFirestore({'ramadanModeOverride': ramadan.name});

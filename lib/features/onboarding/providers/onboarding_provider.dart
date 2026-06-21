@@ -139,10 +139,12 @@ class OnboardingController extends StateNotifier<OnboardingState> {
   }
 
   void setCalculationMethod(String method) {
+    if (state.calculationMethod == method) return;
     state = state.copyWith(calculationMethod: method);
   }
 
   void setMadhab(String madhab) {
+    if (state.madhab == madhab) return;
     state = state.copyWith(madhab: madhab);
   }
 

@@ -47,4 +47,6 @@ firebase_options.dart.bak
 
 # Environment
 .env
-.env.*
+.env.local
+.env.production
+!.env.example

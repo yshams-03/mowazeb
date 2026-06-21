@@ -33,7 +33,7 @@ class AnalyticsScreen extends ConsumerWidget {
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
-            _PrivateBanner(),
+            const _PrivateBanner(),
             const SizedBox(height: 16),
             const StreakWidget(),
             const SizedBox(height: 24),
@@ -55,13 +55,13 @@ class AnalyticsScreen extends ConsumerWidget {
               data: (snapshot) => Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  _SectionTitle(title: 'Prayer completion (30 days)'),
+                  const _SectionTitle(title: 'Prayer completion (30 days)'),
                   CompletionChart(data: snapshot.dailyCompletions),
                   const SizedBox(height: 24),
-                  _SectionTitle(title: 'Per-prayer timing'),
+                  const _SectionTitle(title: 'Per-prayer timing'),
                   PrayerTimingChart(stats: snapshot.prayerDelays),
                   const SizedBox(height: 24),
-                  _SectionTitle(title: 'Schedule insights'),
+                  const _SectionTitle(title: 'Schedule insights'),
                   ...snapshot.insights.map(
                     (insight) => Card(
                       margin: const EdgeInsets.only(bottom: 8),
@@ -72,7 +72,7 @@ class AnalyticsScreen extends ConsumerWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  _SectionTitle(title: 'Weekly heatmap (8 weeks)'),
+                  const _SectionTitle(title: 'Weekly heatmap (8 weeks)'),
                   WeeklyHeatmap(cells: snapshot.heatmap),
                   const SizedBox(height: 80),
                 ],
@@ -86,6 +86,8 @@ class AnalyticsScreen extends ConsumerWidget {
 }
 
 class _PrivateBanner extends StatelessWidget {
+  const _PrivateBanner();
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
