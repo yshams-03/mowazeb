@@ -1,0 +1,52 @@
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ],
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "wazebapp",
+          "appId": "1:456247119841:android:7ec16481009f5250704ca0",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "wazebapp",
+          "configurations": {
+            "android": "1:456247119841:android:7ec16481009f5250704ca0",
+            "ios": "1:456247119841:ios:a60eefd73a5e17a2704ca0",
+            "macos": "1:456247119841:ios:a60eefd73a5e17a2704ca0",
+            "web": "1:456247119841:web:b4c0a3ad2b2f6c33704ca0",
+            "windows": "1:456247119841:web:f9c7b93458a9b5f4704ca0"
+          }
+        }
+      }
+    }
+  },
+  "auth": {
+    "providers": {
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "mowazeb",
+        "supportEmail": "noreply@wazebapp.firebaseapp.com"
+      }
+    }
+  }
+}

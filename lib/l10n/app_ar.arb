@@ -1,0 +1,102 @@
+{
+  "@@locale": "ar",
+  "appName": "مواظب",
+  "tagline": "لا تفوت صلاة",
+  "navHome": "الرئيسية",
+  "navPlanner": "المخطط",
+  "navPlaces": "الأماكن",
+  "navCommute": "التنقل",
+  "navCommunity": "المجتمع",
+  "navAnalytics": "التحليلات",
+  "prayerTimes": "أوقات الصلاة",
+  "nextPrayer": "الصلاة القادمة",
+  "allPrayersComplete": "اكتملت جميع الصلوات",
+  "remaining": "متبقية",
+  "seeYouAtFajr": "نراك في الفجر غداً",
+  "refreshPrayerTimes": "تحديث أوقات الصلاة",
+  "retry": "إعادة المحاولة",
+  "now": "الآن",
+  "prayerFajr": "الفجر",
+  "prayerDhuhr": "الظهر",
+  "prayerAsr": "العصر",
+  "prayerMaghrib": "المغرب",
+  "prayerIsha": "العشاء",
+  "qibla": "القبلة",
+  "qiblaDirection": "اتجاه القبلة",
+  "degreesFromNorth": "{degrees}° من الشمال",
+  "@degreesFromNorth": {
+    "placeholders": {
+      "degrees": {"type": "String"}
+    }
+  },
+  "distanceToMecca": "{distance} كم إلى مكة",
+  "@distanceToMecca": {
+    "placeholders": {
+      "distance": {"type": "String"}
+    }
+  },
+  "openQiblaCompass": "فتح بوصلة القبلة",
+  "locationRequired": "مطلوب إذن الموقع لاتجاه القبلة.",
+  "sensorNotSupported": "مستشعر البوصلة غير متوفر على هذا الجهاز.",
+  "settings": "الإعدادات",
+  "profile": "الملف الشخصي",
+  "prayerCalculation": "حساب الصلاة",
+  "calculationMethod": "طريقة الحساب",
+  "madhabAsr": "المذهب للعصر",
+  "language": "اللغة",
+  "languageEnglish": "English",
+  "languageArabic": "العربية",
+  "theme": "المظهر",
+  "themeSystem": "النظام",
+  "themeLight": "فاتح",
+  "themeDark": "داكن",
+  "homeAddress": "عنوان المنزل",
+  "homeAddressHint": "يُستخدم في مستشار التنقل الذكي",
+  "notifications": "الإشعارات",
+  "notificationPrayers": "تنبيهات الصلاة",
+  "ramadanMode": "وضع رمضان",
+  "ramadanAuto": "كشف تلقائي",
+  "ramadanOn": "تشغيل دائم",
+  "ramadanOff": "إيقاف",
+  "arabicNumerals": "الأرقام العربية",
+  "arabicNumeralsSubtitle": "عرض ٠١٢٣ بدلاً من 0123",
+  "account": "الحساب",
+  "signOut": "تسجيل الخروج",
+  "deleteAccount": "حذف الحساب",
+  "deleteAccountConfirm": "سيؤدي هذا إلى حذف حسابك وبياناتك نهائياً. هل تريد المتابعة؟",
+  "cancel": "إلغاء",
+  "delete": "حذف",
+  "save": "حفظ",
+  "saved": "تم الحفظ",
+  "ramadanMubarak": "رمضان مبارك 🌙",
+  "iftarCountdown": "الإفطار بعد",
+  "suhoor": "السحور",
+  "iftar": "الإفطار",
+  "privateAnalytics": "خاص بك — لا يُشارك مع أعضاء الدائرة",
+  "analytics": "التحليلات",
+  "badges": "الشارات",
+  "personalBest": "أفضل إنجاز: {days} أيام",
+  "@personalBest": {
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "dayStreak": "سلسلة {count} أيام",
+  "@dayStreak": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "login": "تسجيل الدخول",
+  "register": "إنشاء حساب",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "signInWithGoogle": "تسجيل الدخول بـ Google",
+  "goHome": "العودة للرئيسية",
+  "pageNotFound": "الصفحة غير موجودة: {uri}",
+  "@pageNotFound": {
+    "placeholders": {
+      "uri": {"type": "String"}
+    }
+  }
+}

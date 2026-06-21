@@ -1,0 +1,102 @@
+{
+  "@@locale": "en",
+  "appName": "mowazeb",
+  "tagline": "Never miss a prayer",
+  "navHome": "Home",
+  "navPlanner": "Planner",
+  "navPlaces": "Places",
+  "navCommute": "Commute",
+  "navCommunity": "Community",
+  "navAnalytics": "Analytics",
+  "prayerTimes": "Prayer Times",
+  "nextPrayer": "Next Prayer",
+  "allPrayersComplete": "All Prayers Complete",
+  "remaining": "remaining",
+  "seeYouAtFajr": "See you at Fajr tomorrow",
+  "refreshPrayerTimes": "Refresh prayer times",
+  "retry": "Retry",
+  "now": "Now",
+  "prayerFajr": "Fajr",
+  "prayerDhuhr": "Dhuhr",
+  "prayerAsr": "Asr",
+  "prayerMaghrib": "Maghrib",
+  "prayerIsha": "Isha",
+  "qibla": "Qibla",
+  "qiblaDirection": "Qibla Direction",
+  "degreesFromNorth": "{degrees}° from North",
+  "@degreesFromNorth": {
+    "placeholders": {
+      "degrees": {"type": "String"}
+    }
+  },
+  "distanceToMecca": "{distance} km to Mecca",
+  "@distanceToMecca": {
+    "placeholders": {
+      "distance": {"type": "String"}
+    }
+  },
+  "openQiblaCompass": "Open Qibla Compass",
+  "locationRequired": "Location permission is required for Qibla direction.",
+  "sensorNotSupported": "Compass sensor not available on this device.",
+  "settings": "Settings",
+  "profile": "Profile",
+  "prayerCalculation": "Prayer calculation",
+  "calculationMethod": "Calculation method",
+  "madhabAsr": "Madhab for Asr",
+  "language": "Language",
+  "languageEnglish": "English",
+  "languageArabic": "Arabic",
+  "theme": "Theme",
+  "themeSystem": "System",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "homeAddress": "Home address",
+  "homeAddressHint": "Used for Smart Commute Advisor",
+  "notifications": "Notifications",
+  "notificationPrayers": "Prayer alerts",
+  "ramadanMode": "Ramadan mode",
+  "ramadanAuto": "Auto-detect",
+  "ramadanOn": "Always on",
+  "ramadanOff": "Off",
+  "arabicNumerals": "Arabic numerals",
+  "arabicNumeralsSubtitle": "Display ٠١٢٣ instead of 0123",
+  "account": "Account",
+  "signOut": "Sign out",
+  "deleteAccount": "Delete account",
+  "deleteAccountConfirm": "This permanently deletes your account and data. Continue?",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "save": "Save",
+  "saved": "Saved",
+  "ramadanMubarak": "Ramadan Mubarak 🌙",
+  "iftarCountdown": "Iftar in",
+  "suhoor": "Suhoor",
+  "iftar": "Iftar",
+  "privateAnalytics": "Private to you — never shared with circle members",
+  "analytics": "Analytics",
+  "badges": "Badges",
+  "personalBest": "Personal best: {days} days",
+  "@personalBest": {
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "dayStreak": "{count} day streak",
+  "@dayStreak": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "login": "Log in",
+  "register": "Register",
+  "email": "Email",
+  "password": "Password",
+  "signInWithGoogle": "Sign in with Google",
+  "goHome": "Go Home",
+  "pageNotFound": "Page not found: {uri}",
+  "@pageNotFound": {
+    "placeholders": {
+      "uri": {"type": "String"}
+    }
+  }
+}
