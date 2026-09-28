@@ -50,3 +50,12 @@ firebase_options.dart.bak
 .env.local
 .env.production
 !.env.example
+
+# Coverage output from `flutter test --coverage`
+/coverage/
+
+# Firebase CLI local state
+.firebase/
+ui-debug.log
+firestore-debug.log
+pubsub-debug.log
